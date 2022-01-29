@@ -1,0 +1,124 @@
+//font variable
+$font-path: "../fonts";
+$font-family: vazir-medium;
+$font-weight: 700;
+$font-style: normal;
+$defult-font-size: 16px;
+$nav-link-color: #333;
+$nav-link-hover-color: #0000e9;
+$social-media-icon-color: #333;
+$social-media-icon-hover-color: #858585;
+//mixins
+@mixin flex($flex: flex, $position-x: center, $position-y: center) {
+  display: $flex;
+  justify-content: $position-x;
+  align-items: $position-y;
+}
+@mixin margin-padding($top, $right, $bottom, $left, $margin: true) {
+  @if ($margin) {
+    margin: $top $right $bottom $left;
+  } @else {
+    padding: $top $right $bottom $left;
+  }
+}
+//reset
+@font-face {
+  font-family: $font-family;
+  src: url("#{$font-path}/Vazir-Medium.eot") format("eot"),
+    url("#{$font-path}/Vazir-Medium.ttf") format("ttf"),
+    url("#{$font-path}/Vazir-Medium.woff") format("woff"),
+    url("#{$font-path}/Vazir-Medium.woff2") format("woff2");
+  font: {
+    style: $font-style;
+    weight: $font-weight;
+  }
+}
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+ul,
+li,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+//public style
+.container {
+  max-width: 1170px;
+  margin: auto;
+  position: relative;
+}
+.row {
+  @include flex(flex, center, null);
+}
+.img-fluid {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+//menu style section
+.container {
+  .navbar {
+    font-size: $defult-font-size;
+    // background-color: #ccc;
+    height: 60px;
+    @include flex(flex, space-between, center);
+    @include margin-padding(24px,0 ,24px ,0 );
+    ul {
+      @extend .navbar;
+      li {
+        @include margin-padding(0 ,0 ,0 , 18px);
+        position: relative;
+        cursor: pointer;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 30px;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          margin-top: 10px;
+          background-color: #0000e9;
+          transition: width 0.4s ease;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+        &:hover a{
+            color: $nav-link-hover-color;
+        }
+      }
+      a{
+          color: $nav-link-color;
+          transition: color .4s ease;
+        //   @include margin-padding(0,0 ,20px , 0)
+      }
+    }
+  }
+  .social-media-icons{
+      direction: ltr;
+      a{
+          @include margin-padding(0 ,10px ,0 ,0 );
+          color: $social-media-icon-color;
+          font-size: $defult-font-size + 2px;
+          transition: color .3s ease;
+          &:hover{
+              color: $social-media-icon-hover-color;
+          }
+      }
+  }
+}
+// @media screen and (max-width: 1170px) {
+//   .container .navbar ul li:first-child {
+//     margin-right: 10px;
+//   }
+// }
