@@ -14,6 +14,10 @@ body {
   font-family: vazir-medium;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 ul,
 li,
 ol {
@@ -45,10 +49,15 @@ a {
   height: auto;
 }
 
+.mt-250 {
+  margin-top: 250px;
+}
+
 #navigation {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 20;
 }
 
 #navigation .navbar, #navigation .navbar ul {
@@ -254,7 +263,7 @@ a {
   background-color: transparent;
   width: 30px;
   height: 30px;
-  border: 4px solid #dddddd;
+  border: 4px solid #c7c7c7;
   -webkit-animation: square-3 7s linear infinite;
           animation: square-3 7s linear infinite;
 }
@@ -286,5 +295,127 @@ a {
 #header header .left-side h1 {
   font-size: 34px;
   margin: 0 0 30px 0;
+}
+
+#course {
+  position: relative;
+}
+
+#course .pipe {
+  position: absolute;
+  width: 1762px;
+  height: 370px;
+  background: rgba(140, 124, 229, 0.1);
+  top: 83px;
+  left: -366px;
+  border-radius: 0 250px 250px 0;
+}
+
+#course .row .course {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  max-width: 30%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-width: 0 0 4px 0;
+  border-style: solid;
+  border-color: #3672e2;
+  border-radius: 0 0 5px 5px;
+  margin: 0 16px 0 16px;
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+
+#course .row .course:hover {
+  -webkit-box-shadow: 0 0 13px rgba(94, 94, 94, 0.5);
+          box-shadow: 0 0 13px rgba(94, 94, 94, 0.5);
+}
+
+#course .row .course:hover .teacher {
+  top: -54px;
+}
+
+#course .row .course:hover .teacher-name {
+  width: 135px;
+  left: 50px;
+}
+
+#course .row .course .status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  background-color: rgba(54, 114, 226, 0.9);
+  color: #fff;
+  padding: 2px 6px 2px 6px;
+  border-radius: 2px 2px 2px 2px;
+}
+
+#course .row .course .teacher {
+  position: absolute;
+  top: -43px;
+  left: 0;
+  width: 54px;
+  z-index: -1;
+  -webkit-transition: top 1s ease;
+  transition: top 1s ease;
+}
+
+#course .row .course .teacher-name {
+  position: absolute;
+  top: -30px;
+  left: 10px;
+  font-size: 16px -3px;
+  z-index: -2;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+#course .row .course .course-name {
+  margin: 10px 10px 10px 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+#course .row .course .meta {
+  font-size: 14px;
+  margin: 0 10px 0 10px;
+  padding: 16px 0 12px 0;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: #efefef;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#course .row .course .meta .course-time i {
+  color: #45a1ff;
+  margin: 0 0 0 3px;
+}
+
+#course .row .course .meta .price-status {
+  padding: 0 8px 0 8px;
+  color: #f03232;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 /*# sourceMappingURL=style.css.map */
