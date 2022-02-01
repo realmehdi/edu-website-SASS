@@ -1,0 +1,88 @@
+//course style section
+#course{
+    position: relative;
+    .pipe{
+      position: absolute;
+      width: 1762px;
+      height: 370px;
+      background: rgba(140, 124, 229, 0.1);
+      top: 83px;
+      left: -366px;
+      @include border-radius(0, 250px, 250px, 0)
+    }
+    .row{
+      .course{
+        @include section-divider(flex,30% ,30% );
+        flex-direction: column;
+        @include border(0, 0, 4px, 0, solid, #3672e2);
+        @include border-radius(0, 0, 5px, 5px);
+        @include margin-padding(0 ,16px ,0 ,16px );
+        background-color: #fff;
+        position: relative;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease;
+        &:hover{
+          box-shadow: 0 0 13px rgba(94, 94, 94, 0.5);
+        }
+        &:hover .teacher{
+          top: -54px;
+        }
+        &:hover .teacher-name{
+          width: 135px;
+          left: 50px;
+        }
+        .status{
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          font-size: $font-size - 4px;
+          background-color: rgba(54, 114, 226, 0.9);
+          color: #fff;
+          @include margin-padding(2px,6px ,2px ,6px ,false );
+          @include border-radius(2px, 2px, 2px, 2px);
+        }
+        .teacher{
+          position: absolute;
+          top: -43px;
+          left: 0;
+          width: 54px;
+          z-index: -1;
+          transition: top 1s ease;
+        }
+        .teacher-name{
+          position: absolute;
+          top: -30px;
+          left: 10px;
+          font-size: $font-size -3px;
+          z-index: -2;
+          width: 0;
+          overflow: hidden;
+          white-space: nowrap;
+          transition: all 1s ease;
+        }
+        .course-name{
+          @include margin-padding(10px, 10px, 10px, 10px );
+          font-size: $font-size  + 2px;
+          color: $nav-link-color;
+        }
+        .meta{
+          font-size: $font-size - 2px;
+          @include margin-padding(0,10px,0 ,10px );
+          @include margin-padding(16px,0,12px ,0,false );
+          @include border(1px, 0, 0, 0, solid, #efefef);
+          @include flex(flex, space-between, center);
+          .course-time{
+            i{
+              color: #45a1ff;
+              @include margin-padding(0, 0, 0, 3px );
+            }
+          }
+          .price-status{
+            @include margin-padding(0, 8px, 0, 8px,false );
+            color: #f03232;
+            text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+    }
+  }
