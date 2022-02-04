@@ -1,1 +1,93 @@
 //start topic
+#topic{
+    position: relative;
+    &::after,
+    &::before{
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 250px;
+        background: rgba(140, 124, 229, 0.1);
+        bottom: 90px;
+        left: -395px;
+        transform: skewX(10deg);
+        @include border-radius(0,20px,50px,0);
+    }
+    &::after{
+        bottom: 140px;
+        left: -490px;
+    }
+    .topic-title{
+        font-size: $font-size + 10px;
+        @include margin-padding(0,0,30px,0);
+        @include margin-padding(0,10px,0,0,false);
+        @include border(0,5px,0,0,solid,blue);
+    }
+    .topic{
+        @include flex(flex,space-between,null);
+        @include margin-padding(0,0,20px,0);
+        .card{
+            @include section-divider(flex,49%,49%);
+            @include border(1px,1px,1px,1px,solid,#efefef);
+            @include border-radius(3px,3px,3px,3px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            &:hover .topic-img::after{
+                opacity: 0.5;
+            }
+            .topic-img{
+                @include section-divider(flex,30%,30%);
+                position: relative;
+                overflow: hidden;
+                &::after{
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    background-color: #000;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    opacity: 0;
+                    transition: opacity 0.5s ease;
+                }
+            }
+            .topic-detail{
+                @include section-divider(flex,70%,70%);
+                flex-direction: column;
+                @include margin-padding(22px,22px,22px,22px,false);
+                position: relative;
+                &::after{
+                    content: '';
+                    width: 37px;
+                    height: 105%;
+                    background-color: #fff;
+                    position: absolute;
+                    top: -5px;
+                    right: -27px;
+                    transform: rotate(5deg);
+                }
+                a{
+                    font-size: $font-size +2px;
+                    color: $nav-link-hover-color;
+                }
+                .meta{
+                    font-size: $font-size - 4px;
+                    color: #bdbdbd;
+                    margin-top: 15px;
+                    @include margin-padding(15px,0,0,0);
+                    span{
+                        @include margin-padding(0,0,0,16px);
+                    }
+                }
+                p{
+                    font-size: $font-size - 2px;
+                    @include margin-padding(20px,0,0,0);
+                    line-height: 30px;
+                    color: #757575;
+                }
+            }
+        }
+    }
+}
