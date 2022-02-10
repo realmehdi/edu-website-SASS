@@ -1,0 +1,76 @@
+// grid stystem
+$xs-width:576px;
+$sm-width:576px;
+$md-width:768px;
+$lg-width:992px;
+$xl-width:1200px;
+
+@media screen and (max-width: $xs-width) {
+    // xtra small
+    @for $grid-stystem from 1 through 12{
+        .#{col-xs}-#{$grid-stystem}{
+            width: 8.333333% * $grid-stystem;
+        }
+    }
+    @for $offset from 1 through 12{
+        .#{col-xs-offset}-#{$offset}{
+            margin-right: 8.333333% * $offset;
+        }
+    }
+}
+
+@media screen and (min-width: $sm-width) {
+    // small
+    @for $grid-stystem from 1 through 12{
+        .#{col-sm}-#{$grid-stystem}{
+            width: 8.333333% * $grid-stystem;
+        }
+    }
+    @for $offset from 1 through 12{
+        .#{col-sm-offset}-#{$offset}{
+            margin-right: 8.333333% * $offset;
+        }
+    }
+}
+
+@media screen and (min-width: $md-width) {
+    // medium
+    @for $grid-stystem from 1 through 12{
+        .#{col-md}-#{$grid-stystem}{
+            width: 8.333333% * $grid-stystem;
+        }
+    }
+    @for $offset from 1 through 12{
+        .#{col-md-offset}-#{$offset}{
+            margin-right: 8.333333% * $offset;
+        }
+    }
+}
+
+@media screen and (min-width: $lg-width) {
+    // large
+    @for $grid-stystem from 1 through 12{
+        .#{col-lg}-#{$grid-stystem}{
+            width: 8.333333% * $grid-stystem;
+        }
+    }
+    @for $offset from 1 through 12{
+        .#{col-lg-offset}-#{$offset}{
+            margin-right: 8.333333% * $offset;
+        }
+    }
+}
+
+@media screen and (min-width: $xl-width) {
+    // xtra large
+    @for $grid-stystem from 1 through 12{
+        .#{col-xl}-#{$grid-stystem}{
+            width: 8.333333% * $grid-stystem;
+        }
+    }
+    @for $offset from 1 through 12{
+        .#{col-xl-offset}-#{$offset}{
+            margin-right: 8.333333% * $offset;
+        }
+    }
+}
