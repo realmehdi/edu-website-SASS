@@ -89,3 +89,30 @@
       }
     }
   }
+  @media screen and (max-width:750px){
+    #header{
+      header{
+        width: 100%;
+        flex-direction: column;
+        .right-side{
+          width: 100%;
+          @include section-divider(flex,100%,100%);
+          @include flex(flex, center, null);
+        }
+        .left-side{
+          width: 100%;
+          @include section-divider(flex,100%,100%);
+          @include margin-padding(100px,0 ,0 ,0 ,false );
+          @include flex(flex, center, null);
+          main{
+            h1{
+              font-size: $font-size + 10;
+            }
+            p{
+              font-size: $font-size - 2;
+            }
+          }
+        }
+      }
+    }
+  }

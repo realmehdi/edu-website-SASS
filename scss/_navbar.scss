@@ -68,3 +68,22 @@
       }
     }
   }
+  @media screen and (max-width: 650px){
+    #navigation{
+      .navbar {
+        ul {
+          li{
+            &:nth-child(3){
+              @include Status-shown(none);
+            }
+            &:nth-child(4){
+              @include Status-shown(none);
+            }
+          }
+        }
+      }
+      .social-media-icons{
+        margin-left: 10px;
+      }
+    }
+  }

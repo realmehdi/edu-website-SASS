@@ -86,3 +86,18 @@
       }
     }
   }
+  @media screen and (max-width:800px) {
+    #course{
+      .pipe{
+        @include Status-shown(none);
+      }
+      .row{
+        @include flex(flex,center,null);
+        flex-direction: column;
+        .course{
+          @include section-divider(flex,100% ,100% );
+          @include margin-padding(100px ,16px ,0 ,16px );
+        }
+      }
+    }
+  }

@@ -3,6 +3,7 @@
     @include margin-padding(80px,0,0,0,false);
     background-color: #35373a;
     .footer{
+        width: 100%;
         @include flex(flex,space-between,null);
         .side-1{
             @include section-divider(flex,30%,30%);            flex-direction: column;
@@ -86,5 +87,39 @@
         @include margin-padding(30px,0,30px,0,false);
         font-size: $font-size - 2px;
         background-color: #2b2d30;
+    }
+}
+@media screen and (max-width:700px){
+    #footer{
+        .container{
+            .footer{
+                width: 100%;
+                @include flex(flex,center,null);
+                flex-direction: column;
+                .side-1{
+                    width: 100%;
+                    @include section-divider(flex,100%,100%);
+                    text-align: center;
+                }
+                .side-2{
+                    @include section-divider(flex,100%,100%);
+                    justify-content: center;
+                }
+                .side-3{
+                    @include section-divider(flex,100%,100%);
+                    justify-content: center;
+                    @include margin-padding(0,10px,0,10px,false);
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:700px) and (max-width:1170px){
+    #footer{
+        .container{
+            .footer{
+                @include margin-padding(0,10px,0,10px,false);
+            }
+        }
     }
 }

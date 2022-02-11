@@ -91,3 +91,30 @@
         }
     }
 }
+@media screen and (max-width:700px) {
+    #topic{
+      &::before,
+      &::after{
+          @include Status-shown(none);
+      }
+        .topic-title{
+            font-size: $font-size;
+        }
+        .topic{
+            @include flex(flex,center,null);
+            flex-direction: column;
+            .card{
+                @include section-divider(flex,100%,100%);
+                @include margin-padding(0,10px,20px,10px);
+                .topic-detail{
+                    a{
+                        font-size: $font-size - 4;
+                    }
+                    p{
+                        font-size: $font-size - 4;
+                    }
+                }
+            }
+        }
+    }
+}
